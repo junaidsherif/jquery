@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>images</title>
+</head>
+
+<body>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<style type="text/css">
+
+ul { margin: 5px 0 0 -40px;}
+li { display: inline-block; list-style: none outside none;  margin: 0 0 0 0px;}
+
+</style>
+<script type="text/JavaScript">
+
+$(document).ready(function() {
+   var thumbnail=$("#images li img");
+   var bigimage=$(".main-img");
+
+   thumbnail.click(function(){
+    bigimage.animate({opacity:'0.2'},"fast");
+    bigimage.animate({opacity:'1'},"slow");
+    bigimage.attr('src',$(this).attr('src').replace('thumb/', ''));
+});
+
+   thumbnail.hover( function(){
+    $(this).stop().animate({opacity:'0.3'},'fast')},
+    function(){$(this).stop().animate({opacity:'1'},'fast')
+    });
+});
+
+</script>
+</head>
+<body>
+	<div id="images">
+	<img src="images/img-1.jpg"  class="main-img" />
+	<ul>
+	  <li><img src="images/thumb/img-1.jpg" /></li>
+	  <li><img src="images/thumb/img-2.jpg" /></li>
+	  <li><img src="images/thumb/img-3.jpg" /></li>
+	  <li><img src="images/thumb/img-4.jpg" /></li>
+	  <li><img src="images/thumb/img-5.jpg" /></li>
+	  <li><img src="images/thumb/img-6.jpg" /></li>
+	</ul>
+</div>
+</body>
+</html>
