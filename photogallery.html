@@ -25,8 +25,8 @@ $(document).ready(function() {
     bigimage.attr('src',$(this).attr('src').replace('thumb/', ''));
 });
 
-   thumbnail.hover( function(){
-    $(this).stop().animate({opacity:'0.3'},'fast')},
+   thumbnail.hover (
+    function(){$(this).stop().animate({opacity:'0.3'},'fast')},
     function(){$(this).stop().animate({opacity:'1'},'fast')
     });
 });
